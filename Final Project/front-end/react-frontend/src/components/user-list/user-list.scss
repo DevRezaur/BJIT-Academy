@@ -1,0 +1,28 @@
+@import "../../shared/theme/variables.scss";
+
+table {
+  background-color: $off_white;
+  width: 100%;
+  display: block;
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin-bottom: 80px;
+}
+
+tbody {
+  display: table;
+  width: 100%;
+}
+
+th {
+  padding: 15px 25px;
+  background-color: $primary;
+  color: $white;
+}
+
+td {
+  text-align: center;
+  padding: 15px 25px;
+  border-bottom: 1px solid $light_gray;
+  cursor: pointer;
+}

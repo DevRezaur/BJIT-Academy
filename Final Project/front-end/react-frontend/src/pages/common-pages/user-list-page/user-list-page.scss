@@ -1,0 +1,21 @@
+@import "../../../shared/theme/variables.scss";
+
+.user-list-page {
+  min-height: calc(100vh - 70px);
+  padding-top: 75px;
+
+  h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  hr {
+    border: 1px solid rgba($light_black, 0.5);
+    margin-bottom: 40px;
+  }
+
+  .user-list-section {
+    padding: 15px;
+  }
+}

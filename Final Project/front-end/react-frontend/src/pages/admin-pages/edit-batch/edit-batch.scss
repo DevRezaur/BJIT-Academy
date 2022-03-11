@@ -1,0 +1,13 @@
+@import "../../../shared/theme/variables.scss";
+
+.edit-batch {
+  min-height: calc(100vh - 70px);
+  padding: 100px 25px 70px 25px;
+
+  h3 {
+    font-size: 28px;
+    color: $light_black;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+}

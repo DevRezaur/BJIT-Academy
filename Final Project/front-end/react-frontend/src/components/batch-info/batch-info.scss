@@ -1,0 +1,76 @@
+@import "../../shared/theme/variables.scss";
+
+.batch-info {
+  form {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+
+    img {
+      display: block;
+      width: 100%;
+      max-height: 200px;
+      border: 1px solid rgba($light_gray, 0.5);
+      margin-bottom: 40px;
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        font-weight: 600;
+        margin-bottom: 7px;
+        margin-left: 1px;
+      }
+
+      input {
+        height: 25px;
+        color: $accent-2;
+        letter-spacing: 1px;
+        border: 1px solid $light_gray;
+        outline: none;
+        padding: 2px 5px;
+
+        &:focus {
+          border: 1px solid $dark_gray;
+        }
+      }
+
+      textarea {
+        resize: none;
+        height: 75px;
+        color: $accent-2;
+        letter-spacing: 1px;
+        border: 1px solid $light_gray;
+        outline: none;
+        padding: 5px;
+
+        &:focus {
+          border: 1px solid $dark_gray;
+        }
+      }
+
+      .file-input {
+        border: none;
+
+        &:focus {
+          border: none;
+        }
+      }
+
+      .warning {
+        color: $accent-1;
+        font-size: 14px;
+        margin: 8px 0 15px 0;
+      }
+    }
+
+    .button-primary {
+      display: block;
+      width: 100%;
+      max-width: 400px;
+      margin: 30px auto 0 auto;
+    }
+  }
+}

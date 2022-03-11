@@ -1,0 +1,110 @@
+@import "../../shared/theme/variables.scss";
+
+.new-post {
+  margin-top: 15px;
+  margin-bottom: 25px;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  border-radius: 6px;
+  background: rgba($light_gray, 0.3);
+
+  .info {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      font-weight: 600;
+      margin-bottom: 7px;
+      margin-left: 1px;
+    }
+
+    textarea {
+      resize: none;
+      height: 75px;
+      color: $accent-2;
+      letter-spacing: 1px;
+      border: 1px solid $light_gray;
+      outline: none;
+      padding: 5px;
+
+      &:focus {
+        border: 1px solid $dark_gray;
+      }
+    }
+  }
+
+  .warning {
+    color: $accent-2;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+
+  .button-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    .file-input {
+      border: none;
+
+      &:focus {
+        border: none;
+      }
+    }
+
+    button {
+      width: 150px;
+    }
+  }
+}
+
+.post {
+  margin-top: 25px;
+  border: 1px solid rgba($light_black, 0.3);
+  border-radius: 6px;
+  padding: 25px;
+
+  .top-section {
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    margin-bottom: 20px;
+
+    img {
+      display: block;
+      width: 50px;
+      height: 50px;
+      border-radius: 25px;
+    }
+
+    div {
+      .name {
+        font-weight: 600;
+        font-size: 16px;
+        margin-bottom: 3px;
+      }
+
+      .time {
+        font-weight: 400;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .description {
+    font-weight: 300;
+    margin-bottom: 15px;
+  }
+
+  h4 {
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+  }
+
+  a {
+    color: $accent-1;
+  }
+}

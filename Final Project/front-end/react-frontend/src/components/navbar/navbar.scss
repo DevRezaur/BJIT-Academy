@@ -1,0 +1,137 @@
+@import "../../shared/theme/variables.scss";
+
+nav {
+  position: fixed;
+  background: linear-gradient(to right, $primary 40%, $secondary);
+  color: $white;
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  width: 100%;
+  padding: 0 25px;
+  z-index: 99;
+  border-bottom: 1px solid $light_gray;
+
+  .branding {
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+
+    i {
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    p {
+      font-size: 18px;
+    }
+  }
+
+  .menu {
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+
+    @media screen and (max-width: 600px) {
+      display: none;
+    }
+
+    .button-outline {
+      height: 27px;
+    }
+  }
+}
+
+#side-bar {
+  background: linear-gradient(to bottom, $primary, $secondary);
+  color: $white;
+  width: 250px;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow-y: auto;
+  z-index: 99;
+
+  .branding {
+    background: linear-gradient(to right, $secondary 60%, $primary);
+    color: $white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding: 0 25px;
+    border-bottom: 1px solid $light_gray;
+
+    i {
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    p {
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
+  }
+
+  .sidebar-wrapper {
+    .user-info {
+      text-align: center;
+      padding: 25px 25px 25px 25px;
+      border-bottom: 1px solid $light_gray;
+
+      p {
+        color: $accent-1;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        line-height: 25px;
+      }
+    }
+
+    .menu-items {
+      margin-top: 15px;
+      margin-bottom: 15px;
+
+      a {
+        display: block;
+        color: $white;
+        padding: 10px 15px;
+        letter-spacing: 1px;
+
+        &:hover {
+          background-color: $secondary;
+          color: $accent-1;
+          cursor: pointer;
+          font-weight: 600;
+        }
+      }
+
+      .active {
+        background-color: $secondary;
+        color: $accent-1;
+        font-weight: 600;
+      }
+
+      p {
+        padding: 10px 15px;
+        letter-spacing: 1px;
+
+        &:hover {
+          background-color: $secondary;
+          color: $accent-1;
+          cursor: pointer;
+          font-weight: 600;
+        }
+      }
+
+      .button-outline {
+        display: block;
+        width: 80%;
+        height: 30px;
+        margin: 15px auto;
+      }
+    }
+  }
+}

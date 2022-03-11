@@ -1,0 +1,101 @@
+@import "../../../shared/theme/variables.scss";
+
+.profile-page {
+  min-height: calc(100vh - 70px);
+  padding: 80px 10px 50px 10px;
+
+  .button-primary {
+    display: block;
+    width: 80%;
+    max-width: 250px;
+    margin: 0 auto;
+
+    i {
+      font-size: 18px;
+      margin-right: 5px;
+    }
+  }
+
+  .grid-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "left"
+      "right";
+    column-gap: 50px;
+    row-gap: 30px;
+    padding: 40px 15px;
+
+    @media screen and (min-width: 700px) {
+      grid-template-columns: auto 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: "left right";
+    }
+
+    .left {
+      grid-area: left;
+
+      img {
+        display: block;
+        width: 90%;
+        max-width: 200px;
+        margin: 0 auto 20px auto;
+      }
+    }
+
+    .right {
+      grid-area: right;
+
+      .profile-section {
+        background-color: $off_white;
+
+        h3 {
+          background-color: $secondary;
+          color: $white;
+          text-align: center;
+          font-size: 16px;
+          letter-spacing: 1px;
+          font-weight: 600;
+          padding: 10px;
+        }
+
+        .info-wrapper {
+          padding: 20px 15px 5px 15px;
+
+          .info {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr auto;
+            padding-bottom: 15px;
+
+            @media screen and (min-width: 400px) {
+              grid-template-columns: 1fr 1fr;
+              grid-template-rows: 1fr;
+            }
+
+            .label {
+              display: block;
+              color: $black;
+              font-weight: 600;
+              margin-bottom: 5px;
+            }
+
+            .data {
+              display: block;
+              color: $accent-2;
+              letter-spacing: 1px;
+              word-wrap: break-word;
+              overflow-wrap: anywhere;
+            }
+          }
+        }
+      }
+
+      .button-primary {
+        margin-top: 25px;
+        width: 200px;
+      }
+    }
+  }
+}

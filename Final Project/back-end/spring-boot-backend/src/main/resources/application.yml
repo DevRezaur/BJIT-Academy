@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+spring:
+  main:
+    allow-circular-references: true
+  jpa:
+    open-in-view: false
+    database: POSTGRESQL
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    defer-datasource-initialization: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/bjit_academy_db
+    username: postgres
+    password: root
+  sql:
+    init:
+      mode: never
+
+jwt:
+  secret: secret
+  #jwtExp: 300000
+  jwtExp: 86400000
+  refreshExp: 86400000

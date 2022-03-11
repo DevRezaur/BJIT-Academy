@@ -1,0 +1,33 @@
+@import "../../shared/theme/variables.scss";
+
+.enroll-new-user-form {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 70px;
+  background: rgba($light_gray, 0.3);
+  padding: 25px 15px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+
+  .info {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      font-weight: 600;
+      margin-bottom: 7px;
+      margin-left: 1px;
+    }
+
+    input {
+      height: 25px;
+      color: $accent-2;
+      letter-spacing: 1px;
+      border: 1px solid $light_gray;
+      outline: none;
+      padding: 2px 5px;
+    }
+  }
+}

@@ -1,0 +1,72 @@
+@import "../../../shared/theme/variables.scss";
+
+.login-page {
+  min-height: calc(100vh - 70px);
+  padding: 100px 20px 70px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $white;
+
+  .form-box {
+    width: 100%;
+    max-width: 600px;
+    margin-top: -50px;
+    padding: 25px;
+    background: linear-gradient(to right, $primary, $secondary);
+    color: $white;
+
+    h3 {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.5;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .warning {
+      color: $accent-1;
+      font-size: 14px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .input-box {
+      label {
+        display: block;
+        margin-bottom: 10px;
+        margin-left: 1px;
+      }
+
+      input {
+        width: 100%;
+        max-width: 600px;
+        height: 26px;
+        padding: 0 5px;
+        outline: none;
+        border: none;
+      }
+
+      p {
+        color: $accent-1;
+        font-size: 13px;
+        margin: 8px 0 15px 0;
+      }
+    }
+
+    button {
+      display: block;
+      margin: 25px auto 0 auto;
+      width: 100%;
+      height: 30px;
+      max-width: 250px;
+      background: rgba($color: $accent-1, $alpha: 1);
+      font-weight: 600;
+
+      &:hover {
+        background: rgba($color: $accent-1, $alpha: 0.9);
+      }
+    }
+  }
+}

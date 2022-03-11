@@ -1,0 +1,52 @@
+@import "../../shared/theme/variables.scss";
+
+footer {
+  background: linear-gradient(to left, $primary, $secondary);
+  color: $white;
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 25px;
+    width: 90%;
+    min-height: 70px;
+    margin: 0 auto;
+
+    @media screen and (max-width: 700px) {
+      flex-direction: column;
+      padding: 25px 0;
+    }
+
+    .branding {
+      display: flex;
+      align-items: center;
+      column-gap: 10px;
+
+      i {
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 20px;
+        margin-bottom: -3px;
+      }
+    }
+
+    .icons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      column-gap: 25px;
+
+      a {
+        color: $white;
+        font-size: 24px;
+
+        &:hover {
+          color: $accent-1;
+        }
+      }
+    }
+  }
+}
