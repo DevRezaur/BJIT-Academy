@@ -1,15 +1,20 @@
-import React, { useContext } from "react";
-import { useState } from "react/cjs/react.development";
+import axios from "axios";
+import React, { useCallback, useContext, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import DashboardComponent from "../../../components/dashboard-component/dashboard-component";
 import DiscussionBoard from "../../../components/discussion-board/discussion-board";
 import EnrollNewUser from "../../../components/enroll-new-user/enroll-new-user";
 import EnrolledUserList from "../../../components/enrolled-user-list/enrolled-user-list";
 import { LoginContext } from "../../../contexts/login-context";
+import Constant from "../../../shared/config/constant";
 import "./batch-dashboard.scss";
 
 const BatchDashboard = () => {
   const { authInfoContext } = useContext(LoginContext);
-  const authInfo = authInfoContext[0];
+  const [authInfo, setAuthInfo] = authInfoContext;
+  const [batch, setBatch] = useState({});
+  let navigate = useNavigate();
+  const { batchId } = useParams();
   const [isDashboardSelected, setIsDashboardSelected] = useState(true);
   const [isEnrolledUsersSelected, setIsEnrolledUsersSelected] = useState(false);
   const [isAddNewUserSelected, setIsAddNewUserSelected] = useState(false);
@@ -39,19 +44,40 @@ const BatchDashboard = () => {
     }
   };
 
+  const logout = useCallback(() => {
+    alert("Session Expired");
+    localStorage.clear();
+    setAuthInfo(null);
+    navigate("/");
+  }, [setAuthInfo, navigate]);
+
+  useEffect(() => {
+    axios({
+      method: "GET",
+      url: Constant.BACKEND_BASE_URL + "/batch/" + batchId,
+      headers: {
+        Authorization: `Bearer ${authInfo.token}`,
+      },
+    })
+      .then((response) => {
+        setBatch(response.data);
+      })
+      .catch((error) => {
+        if (error.response.status === 403) logout();
+      });
+  }, [authInfo, batchId, logout]);
+
   return (
     <>
       <div className="batch-dashboard container">
         <div className="banner">
           <div className="image-section">
-            <img src="https://devrezaur.com/File-Bucket/image/spring.jpg" alt="" />
+            <img src={batch.imageUrl} alt="" />
           </div>
 
           <div className="info-section">
-            <p className="title">Java Batch 01</p>
-            <p className="description">
-              This is a sample description of Java Batch 01. This batch started at 1 October 2021, and is expected to end at 31 December, 2021.
-            </p>
+            <p className="title">{batch.batchName}</p>
+            <p className="description">{batch.description}</p>
           </div>
         </div>
 
